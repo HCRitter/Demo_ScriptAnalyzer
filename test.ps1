@@ -1,1 +1,0 @@
-$This_is_a_snake_case_variable = "This is a snake_case variable name, which is not best practice."
