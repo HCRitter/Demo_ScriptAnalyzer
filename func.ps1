@@ -14,9 +14,6 @@
 .EXAMPLE
     SampleFunction -Name "Jane"
     This will output "Hello, Jane!"
-.EXAMPLE
-    SampleFunctXionX -Name "Alice"
-    This will output "Hello, Alice!"
 .NOTES
     Author: Your Name
     Date: Today's Date
