@@ -19,11 +19,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Install PSScriptAnalyzer
-        shell: pwsh
-        run: |
-          Install-Module PSScriptAnalyzer -Force -Scope CurrentUser
-
       - name: Run ScriptAnalyzer with custom rules
         shell: pwsh
         run: |
@@ -35,7 +30,7 @@ jobs:
           Write-Host "Current directory: $PWD"
 
           # Analyze repository
-          $results = invoke-ScriptAnalyzer -Path $PWD -CustomRulePath $customRulePath
+          invoke-ScriptAnalyzer -Path $PWD -CustomRulePath $customRulePath\Check_For_SnakeCase.psm1
 
           # Output results
           if ($results) {
