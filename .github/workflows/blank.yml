@@ -32,12 +32,10 @@ jobs:
           $customRulePath = Join-Path $PWD ".rules"
 
           Write-Host "Using custom rules from: $customRulePath"
+          Write-Host "Current directory: $PWD"
 
           # Analyze repository
-          $results = Invoke-ScriptAnalyzer `
-            -Path . `
-            -Recurse `
-            -CustomRulePath $customRulePath
+          $results = invoke-ScriptAnalyzer -Path $PWD -CustomRulePath $customRulePath
 
           # Output results
           if ($results) {
