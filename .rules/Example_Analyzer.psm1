@@ -54,7 +54,7 @@ function Measure-CommandExampleAnalyzer {
                 
                 if($Ast -is [System.Management.Automation.Language.FunctionDefinitionAst]){
                     $AST.GetHelpContent().Examples.ForEach({
-                        if($_ -notlike "*$($Ast.Name)*"){
+                        if($_.tostring() -notmatch "$($Ast.Name) "){
                             return $true
                         }
                     })
